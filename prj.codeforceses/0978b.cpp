@@ -2,37 +2,31 @@
 #include <unordered_map>
 #include <vector>
 #include <string>
-
-
-
-
-
-
 int main(){
-    std::vector<std::string> a;
-    int n,cntr;
+    std::vector<char> a;
+    int n,cntr,flag;
+    flag=0;
     std::string x;
     cntr=0;
     std::cin >> n;
-    for (int i =0 ; i<n;i++){
-        std::cin>>x;
-        a.push_back(x);
+    std::cin>>x;
+    for (char i:x){
+        a.push_back(i);
         }
     int cc=0;
     while (cc<100){
+        for (char l:a){ if(l!='x'){flag=1;}}
+        if (flag!=1){cntr=n-2;break;}
+        cc+=1;
         for (int i = 0;i<n;i++){
-                if (a[i]=="x" and a[i+1]=="x" and a[i+2]=="x"){
+                if (a[i]=='x' and a[i+1]=='x' and a[i+2]=='x'){
                     a.erase(a.begin()+i);
                     cntr+=1;
             }
             
         }
-        cc++;
-    }
-    for (std::string i:a){
         
-        std::cout<<i;
-        }
-    std::cout << " "<<cntr;
+    }
+    std::cout<<cntr;
     
 }
