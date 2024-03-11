@@ -46,5 +46,11 @@ Complex& Compex::operator/=(const Complex& rhs){
  bool Complex::operator!=(Complex& rhs) const noexcept {if (re==rhs.re && im==rhs.im){return false;}else{return true}}
 
 
+Complex Complex::operator+()
+
+
+
+
+
 
 
