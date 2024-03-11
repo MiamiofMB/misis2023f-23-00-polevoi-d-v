@@ -41,4 +41,37 @@ struct Complex{
   Complex& operator*=(const Complex& subbr) noexcept;
 }
 
-//сложение с комплекном числом и с действительным
+
+[[nodiscart]] operator+(const double lhs,const double rhs) noexcept;
+[[nodiscart]] operator+(const double lhs,const Complex& rhs) noexcept;
+[[nodiscart]] operator+(const Complex& lhs,const double rhs) noexcept;
+
+
+[[nodiscart]] operator-(const double lhs,const double rhs) noexcept;
+[[nodiscart]] operator-(const double lhs,const Complex& rhs) noexcept;
+[[nodiscart]] operator-(const Complex& lhs,const double rhs) noexcept;
+
+
+[[nodiscart]] operator*(const double lhs,const double rhs) noexcept;
+[[nodiscart]] operator*(const double lhs,const Complex& rhs) noexcept;
+[[nodiscart]] operator*(const Complex& lhs,const double rhs) noexcept;
+
+
+[[nodiscart]] operator/(const double lhs,const double rhs);
+[[nodiscart]] operator/(const double lhs,const Complex& rhs);
+[[nodiscart]] operator/(const Complex& lhs,const double rhs);
+
+
+inline std::ostream& operator<<(std::ostream& ostrm, const Complex& rhs) noexcept {
+  return rhs.WriteTo(ostrm);
+}
+
+
+inline std::istream& operator>>(std::istream& istrm, Complex& rhs) noexcept {
+  return rhs.ReadFrom(istrm);
+}
+
+
+
+
+#endif
