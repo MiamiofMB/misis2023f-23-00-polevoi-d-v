@@ -5,7 +5,7 @@
 
 #include <cstdint>
 #include <iosfwd>
-
+#include <stdexcept>
 
 class Rational {
 public:
@@ -15,8 +15,8 @@ public:
 	
 	//конструкторы и прочая хрень
 	Rational() = default;
-	explicit Rational(std::int64_t t, std::int64_t b) { top = t;bot = b;}
-	Rational(std::int64_t x) { top = x;bot = 0.0;}
+	explicit Rational(std::int64_t t, std::int64_t b) { top = t;bot = b; if (bot == 0){throw std::invalid_argument("Zero denumenator in Rational ctor")}}
+	Rational(std::int64_t x) { top = x;bot = 1;}
 	Rational(Rational&) = default;
 	Rational(Rational&&) = default;
 	~Rational() = default;
