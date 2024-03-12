@@ -10,8 +10,8 @@
 class Rational {
 public:
 	//ячейки памяти 
-	std::int64_t top{ 0.0 };//числитель
-	std::int64_t bot{ 0.0 };//знаменатель
+	std::int64_t top{ 0 };//числитель
+	std::int64_t bot{ 1 };//знаменатель
 	
 	//конструкторы и прочая хрень
 	Rational() = default;
