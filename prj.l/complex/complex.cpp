@@ -88,10 +88,10 @@ Complex Complex::operator*(Complex& lhs, double rhs) noexcept{
 Complex Complex::operator/(Complex& lhs, Complex& rhs){
   return Complex(lhs.re/rhs.re,lhs.im/rhs.im);
 }
-Complex Complex::operator/(double lhs, Complex& rhs) noexcept{
+Complex Complex::operator/(double lhs, Complex& rhs){
   return Complex(lhs/rhs.re,rhs.im);
 }
-Complex Complex::operator/(Complex& lhs, double rhs) noexcept{ 
+Complex Complex::operator/(Complex& lhs, double rhs){ 
   return Complex(lhs.re/rhs,lhs.im);
 }
 
