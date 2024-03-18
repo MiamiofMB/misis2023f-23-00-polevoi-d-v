@@ -31,7 +31,7 @@ Complex& Complex::operator*=(const double rhs) noexcept{
 }
 Complex& Compex::operator*=(const Complex& rhs) noexcept{
   re*=rhs.re;
-  im&=rhs.im;
+  im*=rhs.im;
   return *this;
 }
 
