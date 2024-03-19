@@ -6,9 +6,10 @@
 dynarr::dynarr(const dynarr& nw) { std::swap(size, nw.size);std::swap(data, nw.data);std::swap(capacity, nw.capacity);}
 
 float dynarr::operator[] (int indx) {
-  if(indx >0 and indx<capacity-1){
+  if(indx >0 and indx<size){
     return data[indx];
   }
+  else{throw std::invalid_argument("array index out of range");}
 }
 void dynarr::push_back(float ins){
     size+=1;
@@ -29,6 +30,7 @@ void dynarr::resize(int new_size) const{
     for (int i = 0;i<new_size;i++){
       if (i<size){
         temp[i] = data[i];
+        capacity+=1;
       }
     }
     delete data;
