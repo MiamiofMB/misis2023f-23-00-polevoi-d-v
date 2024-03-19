@@ -11,7 +11,7 @@ private:
 	float* data = new float[0];
 public:
 	dynarr() = default;
-	dynarr(const int64_t siz) { delete data;data = new float[siz];size = siz; }
+	dynarr(const int64_t siz) { delete data;data = new float[siz]{0};size = siz; }
 	dynarr(dynarr&) = default;
 	dynarr(dynarr&&) = default;
 	~dynarr() { delete data; data = nullptr; }
