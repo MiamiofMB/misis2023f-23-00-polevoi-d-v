@@ -12,7 +12,7 @@ struct Complex{
 
   // Конструирование комплекного числа из действительного и из реальной части и воображаемой
   Complex(const double rational){re=rational;}
-  Complex(const double real,const double imag):re(real),im(imag){};
+  Complex(const double real,const double imag):re(real),im(imag){}
   //Переменные
   double re {0.0}; // как я понял в эту ячейку можно приставить значение через скобки, это все равно что написать re = 10;
   double im {0.0};
