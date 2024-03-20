@@ -143,25 +143,14 @@ bool Rational::operator<=(Rational& rhs) {
 	return true;
 }
 
-bool Rational::operator ==(Rational& rhs) {
-	if (top == rhs.top && bot == rhs.bot) { return true; }
-	return false;
-}
-bool Rational::operator ==(std::int64_t rhs) {
-	if (bot == 1 and top == rhs) { return true;}
-	return false;
-}
-bool Rational::operator !=(Rational& rhs) {
-	if (top == rhs.top && bot == rhs.bot) { return false; }
-	return true;
-}
-bool Rational::operator !=(std::int64_t rhs) {
-	if (bot == 1 and top == rhs) { return false; }
-	return true;
-}
+
+bool Rational::operator ==(Rational& rhs) {return (top == rhs.top && bot == rhs.bot);}
+bool Rational::operator ==(std::int64_t rhs) {return (bot == 1 and top == rhs);}
+bool Rational::operator !=(Rational& rhs) {return !(top == rhs.top && bot == rhs.bot);}
+bool Rational::operator !=(std::int64_t rhs) {return !(bot == 1 and top == rhs);}
 
 
-//ââîä è âûâîä
+//Ã¢Ã¢Ã®Ã¤ Ã¨ Ã¢Ã»Ã¢Ã®Ã¤
 
 
 std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs) noexcept { return ostrm; }
