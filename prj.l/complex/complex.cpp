@@ -47,8 +47,8 @@ Complex& Compex::operator/=(const Complex& rhs){
 
 
 
- bool Complex::operator==(Complex& rhs) const noexcept {if (re==rhs.re && im==rhs.im){return true;}else{return false}}
- bool Complex::operator!=(Complex& rhs) const noexcept {if (re==rhs.re && im==rhs.im){return false;}else{return true}}
+ bool Complex::operator==(Complex& rhs) const noexcept {return (re==rhs.re && im==rhs.im)}
+ bool Complex::operator!=(Complex& rhs) const noexcept {return !(re==rhs.re && im==rhs.im)}
 
 
 Complex Complex::operator+(Complex& lhs, Complex& rhs) noexcept{
