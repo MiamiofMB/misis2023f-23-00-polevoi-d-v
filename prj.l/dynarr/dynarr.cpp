@@ -24,7 +24,14 @@ void dynarr::push_back(float ins){
     temp = nullptr;
 }
 void dynarr::resize(int new_size) const{
-  if (new_size>0){
+  if (new_size<=0){
+    throw std::invalid_argument("Size can't be a negative value,you donkey!");
+  }
+  
+  if (new_size<size){
+    size= new_size;
+  }
+  else{
     capacity = 0;
     float* temp = new float[new_size]{0};
     for (int i = 0;i<new_size;i++){
@@ -37,6 +44,5 @@ void dynarr::resize(int new_size) const{
     data = temp;
     temp = nullptr;
     }
-  else{throw std::invalid_argument("Size can't be a negative value,you donkey!")}
 }
 int dynarr:size(){return size;}
