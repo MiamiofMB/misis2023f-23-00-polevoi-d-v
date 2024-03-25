@@ -3,6 +3,15 @@
 #include<stdexcept>
 #include<dynarr/dynarr.hpp>
 
+
+dynarr::dynarr(int size_){
+  size=size_;
+  capacity = 0;
+  float* temp = new float[size];
+  data=temp;
+}
+
+
 dynarr::dynarr(dynarr&& nw) noexcept { std::swap(size, nw.size);std::swap(data, nw.data);std::swap(capacity, nw.capacity);return *this;}
 
 dyanrr::dynarr(dynarr& nw){
