@@ -34,15 +34,12 @@ void dynarr::resize(int new_size) const{
   else{
     capacity = 0;
     float* temp = new float[new_size]{0};
-    for (int i = 0;i<new_size;i++){
-      if (i<size){
-        temp[i] = data[i];
-        capacity+=1;
-      }
-    }
+    std::copy(data,data+size,temp);
     delete data;
     data = temp;
     temp = nullptr;
+    capacity = size;
+    size = new_size;
     }
 }
 int dynarr:size(){return size;}
