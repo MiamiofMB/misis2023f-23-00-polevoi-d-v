@@ -9,6 +9,7 @@ class dynarr {
 private:
 	int64_t size = 0;
 	float* data = new float[0];
+	int64_t capacity = 0;
 public:
 	dynarr() = default;
 	dynarr(const int64_t siz) { delete data;data = new float[siz]{0};size = siz; }
