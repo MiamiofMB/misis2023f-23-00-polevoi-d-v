@@ -3,32 +3,32 @@
 
 
 
-stackarr::stackarr(stackarr& na):size(na.size),capasity(na.capasity) {
+Stackarr::Stackarr(stackarr& na):size(na.size),capasity(na.capasity) {
 	complex* temp = new complex[sz];
 	data = temp;
 	temp = nullptr;
 
 }
 
-stackarr::stackarr(stackarr&& na) {
+Stackarr::Stackarr(stackarr&& na) {
 	std::swap(na.size, size);
 	std::swap(na.capasity, capasity);
 	std::swap(na.data, data);
 
 
 }
-stackarr::top() {
+Stackarr::top() {
 	if (capasity>0){return data[capasity-1];}
 }
-stackarr::pop() {
+Stackarr::pop() {
 	if (capasity > 0) { capasity -= 1; }
 }
-stackarr::clear() {
+Stackarr::clear() {
 	delete[] data;
 	size = 0;
 	capasity = 0;
 }
-stackarr::push(float x) {
+Stackarr::push(float x) {
 	float* temp = new float[size + 1];
 	std::copy(data, data + size + 1, temp);
 	temp[size] = x;
@@ -38,6 +38,7 @@ stackarr::push(float x) {
 	data = temp;
 	temp = nullptr;
 }
-stackarr::isEmpty() {
+Stackarr::isEmpty() {
 	return capasity == 0;
 }
+
