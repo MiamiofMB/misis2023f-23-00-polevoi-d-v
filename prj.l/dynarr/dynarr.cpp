@@ -4,7 +4,7 @@
 #include<dynarr/dynarr.hpp>
 
 
-dynarr::dynarr(int size_){
+Dynarr::Dynarr(int size_){
   size=size_;
   capacity = 0;
   float* temp = new float[size];
@@ -12,9 +12,9 @@ dynarr::dynarr(int size_){
 }
 
 
-dynarr::dynarr(dynarr&& nw) noexcept { std::swap(size, nw.size);std::swap(data, nw.data);std::swap(capacity, nw.capacity);return *this;}
+Dynarr::Dynarr(dynarr&& nw) noexcept { std::swap(size, nw.size);std::swap(data, nw.data);std::swap(capacity, nw.capacity);return *this;}
 
-dyanrr::dynarr(dynarr& nw){
+Dyanrr::Dynarr(dynarr& nw){
   if (nw.size<=size){
     capacity = nw.size;
   }
@@ -35,7 +35,7 @@ dyanrr::dynarr(dynarr& nw){
 
 
 
-float dynarr::operator[] (int indx) {
+float Dynarr::operator[] (int indx) {
   if(indx >0 and indx<size){
     return data[indx];
   }
@@ -45,7 +45,7 @@ void dynarr::push_back(float ins){
   dynarr::resize(size+1);
   data[size-1] = ins;
 }
-void dynarr::resize(int new_size) const{
+void Dynarr::resize(int new_size) const{
   if (new_size<=0){
     throw std::invalid_argument("Size can't be a negative value,you donkey!");
   }
@@ -63,4 +63,4 @@ void dynarr::resize(int new_size) const{
     size = new_size;
     }
 }
-int dynarr::size(){return size;}
+int Dynarr::size(){return size;}
