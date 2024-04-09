@@ -5,18 +5,18 @@
 
 #include <complex>
 
-class stackarr{
+class Stackarr{
 private:
 	int64_t size = 0;
 	int64_t capasity = 0;
 	float* data = new float[size];
 public:
-	stackarr() = default;
+	Stackarr() = default;
 	
-	stackarr(stackarr& s) = default;
-	stackarr(stackarr&& s) = default;
+	Stackarr(stackarr& s) = default;
+	Stackarr(stackarr&& s) = default;
 
-	~stackarr(){delete data;}
+	~Stackarr(){delete data;}
 
 	void pop(); // я не уверен, что нам нужен noexcept тут потому что поп можно взвать от пустого стека что спровоцирует ошибку.
 	
