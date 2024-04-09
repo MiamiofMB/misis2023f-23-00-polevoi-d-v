@@ -20,9 +20,11 @@ Stackarr::Stackarr(stackarr&& na) {
 }
 Stackarr::top() {
 	if (capasity>0){return data[capasity-1];}
+	else{throw std::invalid_argument("Stack is fucking empty");}
 }
 Stackarr::pop() {
 	if (capasity > 0) { capasity -= 1; }
+	else{throw std::invalid_argument("Stack is fucking empty");}
 }
 Stackarr::clear() {
 	delete[] data;
