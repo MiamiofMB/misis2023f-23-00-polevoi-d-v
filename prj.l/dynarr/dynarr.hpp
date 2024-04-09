@@ -5,17 +5,17 @@
 
 
 
-class dynarr {
+class Dynarr {
 private:
 	int64_t size = 0;
 	float* data = new float[0];
 	int64_t capacity = 0;
 public:
-	dynarr() = default;
-	dynarr(const int64_t siz) { delete data;data = new float[siz]{0};size = siz; }
-	dynarr(dynarr&) = default;
-	dynarr(dynarr&&) = default;
-	~dynarr() { delete data; data = nullptr; }
+	Dynarr() = default;
+	Dynarr(const int64_t siz) { delete data;data = new float[siz]{0};size = siz; }
+	Dynarr(dynarr&) = default;
+	Dynarr(dynarr&&) = default;
+	~Dynarr() { delete data; data = nullptr; }
 	float operator[](int indx) const;
 	void push_back(float ins) const;
 	void resize(int new_size);
