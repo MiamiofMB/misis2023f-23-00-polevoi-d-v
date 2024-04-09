@@ -3,7 +3,7 @@
 #include <stdexcept>
 
 
-Stacklst::Sacklst(Stacklst& ls) {
+Stacklst::Stacklst(Stacklst& ls) {
 	clear();
 	//очищать ls не нужно тк мы не копируем его в функцию, а берем только ссылку на указатель. Его очисткой займется деструктор
 	Node* temp = ls.head;
@@ -11,10 +11,7 @@ Stacklst::Sacklst(Stacklst& ls) {
 		head = new Node{ temp.val,temp.head->next };
 		//delete temp;
 		temp = temp->next;
-
 	}
-
-
 }
 
 
