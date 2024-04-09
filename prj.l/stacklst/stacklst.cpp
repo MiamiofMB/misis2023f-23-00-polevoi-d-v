@@ -1,15 +1,22 @@
 #include <complex>
 #include <stacklst/stacklst.hpp>
 #include <stdexcept>
+
+
 Stacklst::Sacklst(Stacklst& ls) {
 	clear();
-	Node* temp = nullptr;
-	while () {
-		
+	//очищать ls не нужно тк мы не копируем его в функцию, а берем только ссылку на указатель. Его очисткой займется деструктор
+	Node* temp = ls.head;
+	while (temp != nullptr) {
+		head = new Node{ temp.val,temp.head->next };
+		//delete temp;
+		temp = temp->next;
 
 	}
 
+
 }
+
 
 Stacklst::Sacklst(Stacklst&& ls) {
 	std::swap(ls.head, head);
