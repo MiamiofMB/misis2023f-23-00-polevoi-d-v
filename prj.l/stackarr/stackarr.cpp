@@ -1,5 +1,6 @@
 #include <stackarr.h>
 #include <complex/complex.hpp>
+#include<stdexcept>
 
 
 
