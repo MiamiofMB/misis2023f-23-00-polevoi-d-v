@@ -5,7 +5,7 @@
 
 
 Stackarr::Stackarr(Stackarr& na):size(na.size),capasity(na.capasity) {
-	Complex* temp = new complex[sz];
+	Complex* temp = new complex[na.size];
 	data = temp;
 	temp = nullptr;
 
