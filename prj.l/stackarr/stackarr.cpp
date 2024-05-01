@@ -4,14 +4,14 @@
 
 
 
-Stackarr::Stackarr(stackarr& na):size(na.size),capasity(na.capasity) {
+Stackarr::Stackarr(Stackarr& na):size(na.size),capasity(na.capasity) {
 	complex* temp = new complex[sz];
 	data = temp;
 	temp = nullptr;
 
 }
 
-Stackarr::Stackarr(stackarr&& na) {
+Stackarr::Stackarr(Stackarr&& na) {
 	std::swap(na.size, size);
 	std::swap(na.capasity, capasity);
 	std::swap(na.data, data);
