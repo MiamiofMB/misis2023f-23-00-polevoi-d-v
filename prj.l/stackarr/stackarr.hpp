@@ -16,7 +16,7 @@ public:
 	Stackarr(stackarr& s) = default;
 	Stackarr(stackarr&& s) = default;
 
-	~Stackarr(){delete data;}
+	~Stackarr(){delete[] data;}
 
 	void pop(); // я не уверен, что нам нужен noexcept тут потому что поп можно взвать от пустого стека что спровоцирует ошибку.
 	
